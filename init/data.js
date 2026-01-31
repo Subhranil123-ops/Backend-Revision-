@@ -26,4 +26,4 @@ let data = [{
     message: "tu janta h tere bhaiya so called 'Subhranil' se mujhe pyar h ",
     created_at: new Date()
 }]
-module.exports=data;
+module.exports={data};

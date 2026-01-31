@@ -1,0 +1,11 @@
+<%-layout("layouts /boilerplate.ejs")%>
+    <%title="New Chat"%>
+        <form action="/whatsapp" method="post">
+            <label for="from"></label>
+            <input id="from" name="chat[from]" type="text">
+            <label for="to"></label>
+            <input id="to" name="chat[to]" type="text">
+            <label for="msg"></label>
+            <textarea id="msg" name="chat[msg]" type="text"></textarea>
+            <button>Submit</button>
+        </form>

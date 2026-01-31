@@ -1,7 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { root } = require("../Contoller/chat.js")
+const chatController = require("../Contoller/chat.js")
 router
     .route("/")
-    .get(root);
+    .get(chatController.root)
+    .post(chatController.createNewChat)
+router
+.route("/new")
+.get(chatController.newChat)
+
+
 module.exports = router;

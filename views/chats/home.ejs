@@ -1,0 +1,29 @@
+<%-layout("layouts/boilerplate.ejs")%>
+    <%title="Backend Revision"%>
+
+        <body>
+            <form action="/new" method="post" >
+            <button type="button" class="bg-indigo-500 rounded-lg p-3">New Chat</button>
+            </form>
+            <div class=" grid grid-cols-2 grid-rows-1 gap-4">
+                
+                <%for(chat of chats){%>
+                    <div class="border-solid border-2 border-sky-500 rounded-lg mb-3">
+                        <div class="card-text">From : <%=chat.from%>
+                        </div>
+                        <div class="card-text">To : <%=chat.to%>
+                        </div>
+                        <textarea name="" id=""><%=chat.message%></textarea>
+                        <div class="card-text">
+                            <%=chat.created_at%>
+                        </div>
+                        
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
+
+                    <%}%>
+
+            </div>
+
+        </body>
