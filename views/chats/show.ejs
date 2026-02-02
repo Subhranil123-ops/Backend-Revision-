@@ -1,0 +1,23 @@
+<%layout("layouts/boilerplate.ejs")%>
+    <%title="Details"%>
+
+        <body>
+            <div class="details">
+                <div class="card">
+                    <div class="card-text">From : <%=chat.from%>
+                    </div>
+                    <div class="card-text">To : <%=chat.to%>
+                    </div>
+                    <textarea name="" id=""><%=chat.message%></textarea>
+                    <div class="card-text">
+                        <%=chat.created_at%>
+                    </div>
+                    <form action="/whatsapp/<%=chat._id%>/edit" method="get">
+                        <button>Edit</button>
+                    </form>
+                    <form action="/whatsapp/<%=chat._id%>?_method=DELETE" method="post">
+                        <button>Delete</button>
+                    </form>
+                </div>
+            </div>
+        </body>

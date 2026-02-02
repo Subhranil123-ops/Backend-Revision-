@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+    background-color: aqua;
+}
+
+input {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    height: 3rem;
+    padding: 1rem;
+
+}
+
+textarea {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    height: 4rem;
+    padding: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    text-align: center;
+    margin: auto;
+}

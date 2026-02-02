@@ -1,0 +1,47 @@
+.container {
+    background-color: rgb(0, 0, 0);
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 4rem;
+    padding: 1rem;
+}
+
+button {
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 1.3rem;
+    margin: 0.5rem;
+    background-color: rgb(107, 107, 210);
+}
+
+.navbar-logo img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.navbar {
+    background-color:black;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    margin: 0rem;
+    top: 0;
+    position: sticky;
+    
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+body {
+    color: aliceblue;
+    background-color: rgb(42, 42, 42);
+    margin: 0;
+}
+

@@ -1,0 +1,16 @@
+<%-layout("layouts/boilerplate.ejs")%>
+    <%title="Edit Chat"%>
+        <%css="new.css"%>
+
+            <form action="/whatsapp/<%=chatEach._id%>?_method=PATCH" method="post" class="form">
+                <label for="from">From</label>
+                <input id="from" name="chat[from]" type="text" class="input" placeholder="Sender"
+                    value=<%=chatEach.from%> required>
+                <label for="to">To</label>
+                <input id="to" name="chat[to]" type="text" class="input" placeholder="Reciever" value=<%=chatEach.to%>
+                required>
+                <label for="msg"></label>
+                <textarea id="msg" name="chat[message]" type="text" class="input"
+                    placeholder="Type something to write a message" required><%=chatEach.message%></textarea>
+                <button>Submit</button>
+            </form>
