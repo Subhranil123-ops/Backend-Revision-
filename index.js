@@ -9,14 +9,18 @@ const { main } = require("./config/db.js")
 const chat = require("./Routes/chat.js");
 const methodOverride = require("method-override");
 
+ 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/whatsapp", chat);
+
+
 
 main()
     .then(() => app.listen(3000, () => {

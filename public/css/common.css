@@ -14,21 +14,33 @@ button {
     background-color: rgb(107, 107, 210);
 }
 
-.navbar-logo img {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-}
+
 
 .navbar {
-    background-color:black;
+    background-color: black;
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     margin: 0rem;
+    margin-bottom: 1rem;
     top: 0;
     position: sticky;
-    
+    width: 100%;
+
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding:0 1rem;
+}
+
+.navbar-logo img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
 }
 
 .navbar-logo {
@@ -44,4 +56,3 @@ body {
     background-color: rgb(42, 42, 42);
     margin: 0;
 }
-

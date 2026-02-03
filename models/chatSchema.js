@@ -13,7 +13,8 @@ const chatSchema=new mongoose.Schema({
         type:String
     },
     created_at:{
-        type:Date
+        type:Date,
+        default: Date.now
     }
 })
 

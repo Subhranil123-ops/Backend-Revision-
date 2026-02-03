@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const chatController = require("../Contoller/chat.js");
+let { validateChat } = require("../middleware.js");
 
 router
     .route("/")
     .get(chatController.root)
-    .post(chatController.createNewChat);
+    .post(
+        validateChat,
+        chatController.createNewChat);
 
 router
     .route("/new")
@@ -14,7 +17,9 @@ router
 router
     .route("/:id")
     .get(chatController.show)
-    .patch(chatController.editChat)
+    .patch(
+        validateChat,
+        chatController.editChat)
     .delete(chatController.deleteChat);
 
 router
