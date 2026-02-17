@@ -7,6 +7,7 @@ const ejsMate = require("ejs-mate");
 const path = require("path");
 const { main } = require("./config/db.js")
 const chat = require("./Routes/chat.js");
+const auth = require("./Routes/auth.js");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -32,13 +33,14 @@ app.use((req, res, next) => {
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();
-})
-app.use("/whatsapp", chat);
+});
 
+app.use("/whatsapp", chat);
+app.use("/auth", auth);
 app.use((err, req, res, next) => {
     let { status = 500, message = "Something is wrong!Check it once" } = err;
     console.log(err.stack);
-    req.flash("error",message);
+    req.flash("error", message);
     res.redirect("/whatsapp");
 });
 

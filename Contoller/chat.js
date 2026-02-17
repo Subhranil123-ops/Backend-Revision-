@@ -44,3 +44,4 @@ module.exports.deleteChat = wrapAsync(async (req, res) => {
     req.flash("success", "Chat deleted successflly");
     res.redirect("/whatsapp");
 })
+

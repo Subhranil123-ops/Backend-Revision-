@@ -1,0 +1,13 @@
+<%-layout("layouts/boilerplate.ejs")%>
+    <%title="Sign up"%>
+        <%css="new.css"%>
+
+            <form action="/auth/signup" method="post" class="form">
+                <label for="user">Username</label>
+                <input id="user" name="auth[user]" type="text" class="input" placeholder="Username" required>
+                <label for="email">Email</label>
+                <input id="email" name="auth[email]" type="text" class="input" placeholder="Email" required>
+                <label for="pass"></label>
+                <input id="pass" name="auth[password]" type="password" class="input" required>
+                <button>Sign Up</button>
+            </form>

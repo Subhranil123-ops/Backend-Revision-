@@ -1,0 +1,11 @@
+<%-layout("layouts/boilerplate.ejs")%>
+    <%title="Login"%>
+        <%css="new.css"%>
+
+            <form action="/auth/login" method="post" class="form">
+                <label for="user">Username</label>
+                <input id="user" name="auth[user]" type="text" class="input" placeholder="Username" required>
+                <label for="pass"></label>
+                <input id="pass" name="auth[password]" type="password" placeholder="Type your password" class="input" required>
+                <button>Login</button>
+            </form>
