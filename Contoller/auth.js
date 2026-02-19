@@ -21,8 +21,16 @@ module.exports.renderLoginForm = ((req, res) => {
 });
 
 module.exports.login = wrapAsync(async (req, res) => {
-    const { user } = req.body.auth;
+    const { user, password } = req.body.auth;
     let u = await User.findOne({ user });
+    const match = await bcrypt.compare(password, u.password);
+    if(match){
+        
+    }
+    if (!u) {
+        req.flash("error", "No user found");
+        res.redirect("/auth/signup");
+    }
     res.redirect("/whatsapp");
 });
 
