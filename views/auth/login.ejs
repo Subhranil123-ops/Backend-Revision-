@@ -2,10 +2,32 @@
     <%title="Login"%>
         <%css="new.css"%>
 
-            <form action="/auth/login" method="post" class="form">
+            <form method="post" class="form">
                 <label for="user">Username</label>
                 <input id="user" name="auth[user]" type="text" class="input" placeholder="Username" required>
                 <label for="pass"></label>
-                <input id="pass" name="auth[password]" type="password" placeholder="Type your password" class="input" required>
+                <input id="pass" name="auth[password]" type="password" placeholder="Type your password" class="input"
+                    required>
                 <button>Login</button>
             </form>
+
+            <script>
+                console.log("jsd")
+                let form = document.querySelector("form");
+                let user = document.querySelector("#user");
+                let password = document.querySelector("#pass");
+                form.addEventListener("submit", async (event) => {
+                    event.preventDefault();
+                    let res = await fetch("/auth/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "user": `${user.value}`,
+                            "password": `${password.value}`
+                        })
+                    })
+                    console.log(res);
+                })
+            </script>

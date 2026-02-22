@@ -2,7 +2,9 @@ const bcrypt = require("bcrypt");
 const User = require("../models/userSchema");
 const wrapAsync = require("../utils/wrapAsync.js");
 const saltRounds = 10;
-
+let jwt = require("jsonwebtoken");
+const fs = require('fs');
+let privateKey = fs.readFileSync('./key/private.key');
 module.exports.renderSignupForm = ((req, res) => {
     res.render("./auth/signup.ejs");
 });
@@ -24,14 +26,17 @@ module.exports.login = wrapAsync(async (req, res) => {
     const { user, password } = req.body.auth;
     let u = await User.findOne({ user });
     const match = await bcrypt.compare(password, u.password);
-    if(match){
-        
+    const payload = {
+        userID: u._id,
+    }
+    if (match) {
+        let token = await jwt.sign(payload, privateKey, { algorithm: "RS256" });
+        res.json({token});
     }
     if (!u) {
         req.flash("error", "No user found");
         res.redirect("/auth/signup");
     }
-    res.redirect("/whatsapp");
 });
 
 

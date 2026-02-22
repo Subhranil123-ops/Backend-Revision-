@@ -15,6 +15,10 @@ router
     .route("/new")
     .get(chatController.newChat)
 
+router.get("/profile", (req, res) => {
+    res.send("working");
+})
+
 router
     .route("/:id")
     .get(chatController.show)
@@ -26,5 +30,7 @@ router
 router
     .route("/:id/edit")
     .get(chatController.renderEditForm);
+
+
 
 module.exports = router;

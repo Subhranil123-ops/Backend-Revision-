@@ -13,4 +13,5 @@ router
     .get(authController.renderLoginForm)
     .post(authController.login);
 
+
 module.exports = router;
